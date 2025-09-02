@@ -1,0 +1,392 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header-section style */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:12px 22px 12px 80px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav li {
+    font-size:0.91rem;
+    font-weight: bold;
+    list-style: none;
+    padding-right: 8px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    /* text-decoration: overline; */
+    text-decoration-color: rgb(255, 255, 255);
+
+}
+
+nav li a:hover {
+    text-decoration: overline;
+    text-decoration-color: rgb(255, 0, 106);
+    /* transition: backgroundcolor; */
+    transition: 0.8s ease;
+
+}
+
+.location-btn {
+    background-color: #ff0078;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.location-btn:hover {
+    background-color: #dc1d53;
+    text-decoration: overline;
+    text-decoration-color: #ff0078;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #ff0078;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+    border-radius: 2px;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.293);
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ******************************************** */
+/* ********************************** */
+/* ************************* */
+
+/* main-section style  */
+
+/* video-section  */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 66.5vh;
+    /* Fullscreen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background video styling */
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    /* Places the video behind the text */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* Ensures the video covers the area */
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+    /* Prevents interactions with the video */
+}
+
+/* Text styling */
+#comment {
+    position: relative;
+    top: 10px;
+    left: -360px;
+    z-index: 1;
+    font-size: 3.5em;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Shadow for better contrast on the video */
+    /* padding: 20px; */
+}
+
+/* Responsive text size for smaller screens */
+@media (max-width: 768px) {
+    #comment {
+        font-size: 2em;
+    }
+}
+
+
+/* ****************************** */
+
+/* comment-section  */
+
+.main-content {
+    color: #343b46;
+    font-size: 2.65rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    margin: 130px 0px 150px 80px;
+
+}
+
+/* boxes-section  */
+
+    .box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 80px 70px 70px 70px;
+    }
+
+    .box-comment h2{
+        font-size: 40px;
+        font-weight: bold;
+        color: #343b46;
+        line-height: 1.2;
+    }
+
+    .box-comment p{
+        font-size: 16px;
+        color: #343b46;
+        line-height: 1.5;
+    }
+
+    .button{
+        background-color: #ff0078;
+        border: none;
+        border-radius: 25px;
+        color: white;
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        
+    }
+
+    #read-over-story:hover{
+        background-color: #de6aa0;
+        transition:background-color 0.2s ease;
+    }
+
+    #box7{
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    /* ***scroll container*** */
+
+    .scroll-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .scroll-content {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 16s cubic-bezier(0, 0.63, 0.54, 1) infinite; /* Using ease-in-out for smooth scrolling */
+    }
+
+    .scroll-item img:hover{
+        transform:scale(1.1,1.1);
+        transition: transform 0.5s ease;
+    }
+
+    .scroll-item {
+        flex-shrink: 0;
+        width: 300px;
+        margin-right: 20px;
+    }
+
+    .scroll-item img {
+        width: 300px;
+        height: 190px;
+    }
+
+   
+
+    .scroll-item p {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    /* Keyframes for scrolling and pausing */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        12.5% {
+            transform: translateX(-300px); /* Scrolls first image */
+        }
+        25% {
+            transform: translateX(-300px); /* Pause after first image */
+        }
+        37.5% {
+            transform: translateX(-600px); /* Scrolls second image */
+        }
+        50% {
+            transform: translateX(-600px); /* Pause after second image */
+        }
+        62.5% {
+            transform: translateX(-900px); /* Scrolls third image */
+        }
+        75% {
+            transform: translateX(-900px); /* Pause after third image */
+        }
+        87.5% {
+            transform: translateX(-1200px); /* Scrolls fourth image */
+        }
+        100% {
+            transform: translateX(-1200px); /* Pause after fourth image */
+        }
+    }
+
+/* ******************************** */
+
+/* ******************************************** */
+/* ********************************** */
+/* ************************* */
+
+/* footer-section style  */
+
+
+#footer {
+    background-color: #000000;
+    padding: 80px;
+}
+
+#footer-div li {
+    list-style: none;
+    color: white;
+}
+
+#footer-div a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer-menu-list {
+    display: flex;
+    gap: 13.75rem;
+}
+
+#copyright-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+#copyright-section a:hover {
+    text-decoration: underline;
+}
+
+.upperlist {
+    margin: 60px 0px 20px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.lowerlist {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+
+    /* Adjust gap between menu lists */
+    #footer-menu-list {
+        gap: 7rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Stack menu lists vertically on smaller screens */
+    #footer-menu-list {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    /* Center align the copyright section */
+    #copyright-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Reduce padding for smaller screens */
+    #footer {
+        padding: 40px 20px;
+    }
+
+    /* Adjust margins and font sizes */
+    .upperlist {
+        margin: 40px 0px 15px 0px;
+        font-size: 0.9rem;
+    }
+
+    .lowerlist {
+        font-size: 0.75rem;
+        line-height: 1.1rem;
+    }
+
+    /* Make images responsive */
+    #foodpanda-logo img {
+        width: 100px;
+        /* Adjust size of the logo on smaller screens */
+    }
+}
+
+/* ******************************************** */
+/* ********************************** */
+/* ************************* */
